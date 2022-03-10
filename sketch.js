@@ -39,7 +39,7 @@ function draw() {
 
 if(gameState ==="PLAY"){
 
-  ironMan.setCollider("rectangle",0,0);
+ 
     ironMan.scale=0.3;
     bg.velocityY = 4;
     if (bg.y > 500){
@@ -62,7 +62,8 @@ if(gameState ==="PLAY"){
     var temp = platformGroup.get(i);
 
     if (temp.isTouching(ironMan)) {
-      ironMan.collide(temp);
+      gameState="END"
+     
     }
   }
 
@@ -92,7 +93,7 @@ if(gameState ==="PLAY"){
         }
           
       }
-      if(score<=-10 || ironMan.y>610){
+      if(score<=-10 ){
        gameState ="END";
       }
       
